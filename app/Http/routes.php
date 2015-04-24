@@ -19,3 +19,6 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('activity', 'ActivityController@createActivity');
+Route::post('activity', 'ActivityController@registerActivity');
