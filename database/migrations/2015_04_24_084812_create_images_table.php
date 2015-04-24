@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Tags extends Migration {
+class CreateImagesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class Tags extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('tags', function(Blueprint $table) {
+		Schema::create('images', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('username');
-            $table->string('email')->unique();
+            $table->string('image_name');
+            $table->binary('image_base_64');
             $table->timestamps();
         });
 	}
@@ -27,7 +27,7 @@ class Tags extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('tags');
+		Schema::drop('images');
 	}
 
 }

@@ -3,20 +3,18 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Posts extends Migration {
+class CreateRolesTable extends Migration {
 
-    /**
-     * Run the migrations.
-     *
-
-     * @return void
-     */
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
 	public function up()
 	{
-            Schema::create('posts', function(Blueprint $table) {
+		Schema::create('roles', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('username');
-            $table->string('email')->unique();
+            $table->string('role_name');
             $table->timestamps();
         });
 	}
@@ -28,7 +26,7 @@ class Posts extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('posts');
+		Schema::drop('roles');
 	}
 
 }
