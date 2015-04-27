@@ -20,7 +20,7 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth');
+		//$this->middleware('auth');
 	}
 
 	/**
@@ -30,6 +30,13 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+        //creates an error message
+        $this->createErrorMessage('Dette er en fejl');
+
+        //creates an success message
+        $this->createSuccessMessage('JUHUU det gik godt');
+
+
 		return view('home');
 	}
 
