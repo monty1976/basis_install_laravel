@@ -15,8 +15,8 @@ class CreatePhonesTable extends Migration {
 		Schema::create('phones', function(Blueprint $table) {
                     $table->increments('id');
                     $table->integer('number');
-                    $table->integer('parent_id')->unsigned();
-                    $table->foreign('parent_id')->references('id')->on('parents');
+                    $table->integer('user_id')->unsigned();
+                    $table->foreign('user_id')->references('id')->on('users');
                     $table->timestamps();
                 });
 	}

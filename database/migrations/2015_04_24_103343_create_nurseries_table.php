@@ -15,6 +15,7 @@ class CreateNurseriesTable extends Migration {
 		Schema::create('nurseries', function(Blueprint $table) {
                     $table->increments('id');
                     $table->string('nursery_name');
+                    $table->string('nursery_color');
                     $table->integer('nursery_types_id')->unsigned();
                     $table->foreign('nursery_types_id')->references('id')->on('nursery_types');
                     $table->timestamps();

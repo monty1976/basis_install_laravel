@@ -148,6 +148,8 @@ return [
         
                 /* Generator */
                 'Laracasts\Generators\GeneratorsServiceProvider',
+                /*Helper for passing php to javascript*/
+                'Laracasts\Utilities\JavaScript\JavascriptServiceProvider',
             
                 /* My Dependency Resolver */
                 'App\DependencyResolver',

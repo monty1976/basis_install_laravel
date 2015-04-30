@@ -44,6 +44,7 @@ abstract class Controller {
 	 */
 	public function middleware($middleware, array $options = array())
 	{
+        dd($middleware);
 		$this->middleware[$middleware] = $options;
 	}
 

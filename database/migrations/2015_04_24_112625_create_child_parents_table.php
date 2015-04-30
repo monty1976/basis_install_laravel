@@ -15,8 +15,8 @@ class CreateChildParentsTable extends Migration {
 		Schema::create('child_parents', function(Blueprint $table)
 		{
 			$table->integer('children_id')->unsigned();
-			$table->integer('parents_id')->unsigned();
-			$table->primary(['children_id', 'parents_id']);
+			$table->integer('users_id')->unsigned();
+			$table->primary(['children_id', 'users_id']);
 			$table->timestamps();
 		});
 	}

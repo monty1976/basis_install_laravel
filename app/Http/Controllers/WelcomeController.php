@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Image;
+
+use Laracasts\Utilities\JavaScript\JavaScriptFacade;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +34,19 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+
+        JavaScriptFacade::put([
+            'foo' => 'bar',
+            'age' => 29
+        ]);
+
+
+        $images = Image::find(1);
+
+//        dd($images);
+
+
+		return view('test', compact('images'));
 	}
 
 }

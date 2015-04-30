@@ -29,6 +29,7 @@
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
         "Laracasts\\Generators\\GeneratorsServiceProvider",
+        "Laracasts\\Utilities\\JavaScript\\JavascriptServiceProvider",
         "App\\DependencyResolver"
     ],
     "eager": [
@@ -49,6 +50,7 @@
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
         "Laracasts\\Generators\\GeneratorsServiceProvider",
+        "Laracasts\\Utilities\\JavaScript\\JavascriptServiceProvider",
         "App\\DependencyResolver"
     ],
     "deferred": {
