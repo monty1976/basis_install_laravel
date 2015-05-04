@@ -19,16 +19,11 @@
         <link href="{{ asset('/dist/css/skins/_all-skins.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- iCheck -->
         <link href="{{ asset('/plugins/iCheck/flat/blue.css') }}" rel="stylesheet" type="text/css" />
-        <!-- Morris chart -->
-        <link href="{{ asset('/plugins/morris/morris.css') }}" rel="stylesheet" type="text/css" />
-        <!-- jvectormap -->
-        <link href="{{ asset('/plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
-        <!-- Date Picker -->
-        <link href="{{ asset('/plugins/datepicker/datepicker3.css') }}" rel="stylesheet" type="text/css" />
-        <!-- Daterange picker -->
-        <link href="{{ asset('/plugins/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
-        <!-- bootstrap wysihtml5 - text editor -->
-        <link href="{{ asset('/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
+
+        <link href="{{ asset('/plugins/fullcalendar-2.3.1/fullcalendar.css') }}" rel="stylesheet" type="text/css" />
+
+
+
 
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

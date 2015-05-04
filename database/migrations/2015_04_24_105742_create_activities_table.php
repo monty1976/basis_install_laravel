@@ -19,8 +19,8 @@ class CreateActivitiesTable extends Migration {
                         $table->text('content');
                         $table->date('date');
                         /*** Foreign key ***/
-                        $table->integer('nurseries_id')->unsigned();
-                        $table->foreign('nurseries_id')->references('id')->on('nurseries');
+                        $table->integer('nursery_id')->unsigned();
+                        $table->foreign('nursery_id')->references('id')->on('nurseries');
 			$table->timestamps();
 		});
 	}

@@ -6,4 +6,7 @@ class Role extends Model {
 
 	//
 
+
+
+
 }

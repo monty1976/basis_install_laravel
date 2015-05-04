@@ -16,8 +16,8 @@ class CreateNurseriesTable extends Migration {
                     $table->increments('id');
                     $table->string('nursery_name');
                     $table->string('nursery_color');
-                    $table->integer('nursery_types_id')->unsigned();
-                    $table->foreign('nursery_types_id')->references('id')->on('nursery_types');
+                    $table->integer('nursery_type_id')->unsigned();
+                    $table->foreign('nursery_type_id')->references('id')->on('nursery_types');
                     $table->timestamps();
                 });
 	}

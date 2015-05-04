@@ -2,6 +2,7 @@
 
 use App\Image;
 
+use Illuminate\Support\Facades\Mail;
 use Laracasts\Utilities\JavaScript\JavaScriptFacade;
 
 class WelcomeController extends Controller {
@@ -24,7 +25,7 @@ class WelcomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('guest');
+		//$this->middleware('guest');
 	}
 
 	/**
@@ -34,6 +35,10 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+        Mail::send('emails.welcome', array('key' => 'value'), function($message)
+        {
+            $message->to('renethomassen@hotmail.com', 'Rene')->subject('Hilsen!');
+        });
 
         JavaScriptFacade::put([
             'foo' => 'bar',

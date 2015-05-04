@@ -15,7 +15,13 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+//parents
+Route::get('parent', 'ParentController@index');
 
+//child
+Route::get('child/{id}', 'ChildController@index');
+
+//auth
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

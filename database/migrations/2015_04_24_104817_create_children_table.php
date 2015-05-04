@@ -19,8 +19,12 @@ class CreateChildrenTable extends Migration {
                         $table->string('last_name');
                         $table->date('birthday');
                         /*** Foreign key ***/
-                        $table->integer('nurseries_id')->unsigned();
-                        $table->foreign('nurseries_id')->references('id')->on('nurseries');
+                        $table->integer('nursery_id')->unsigned();
+                        $table->foreign('nursery_id')->references('id')->on('nurseries');
+
+                        $table->integer('image_id')->unsigned();
+                        $table->foreign('image_id')->references('id')->on('images');
+
 			$table->timestamps();
 		});
 	}

@@ -20,11 +20,11 @@ class CreateFormsTable extends Migration {
 			$table->time('time_start');
 			$table->time('time_end');
                         /*** Foreign key ***/
-                        $table->integer('children_id')->unsigned();
-                        $table->foreign('children_id')->references('id')->on('children');
+                        $table->integer('child_id')->unsigned();
+                        $table->foreign('child_id')->references('id')->on('children');
                         
-                        $table->integer('form_types_id')->unsigned();
-                        $table->foreign('form_types_id')->references('id')->on('form_types');
+                        $table->integer('form_type_id')->unsigned();
+                        $table->foreign('form_type_id')->references('id')->on('form_types');
 			$table->timestamps();
 		});
 	}

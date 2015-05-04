@@ -19,8 +19,8 @@ class CreateSleepsTable extends Migration {
 			$table->time('end');
 			$table->date('date');
                         /*** Foreign key ***/
-                        $table->integer('children_id')->unsigned();
-                        $table->foreign('children_id')->references('id')->on('children');
+                        $table->integer('child_id')->unsigned();
+                        $table->foreign('child_id')->references('id')->on('children');
 			$table->timestamps();
 		});
 	}

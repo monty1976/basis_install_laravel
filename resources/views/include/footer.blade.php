@@ -11,38 +11,20 @@
         <script src="{{ asset('/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
 
-         <!--Our  script -->
-        <script src="{{ asset('/js/our.js') }}" type="text/javascript"></script>
 
-        <!-- Morris.js charts -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-        <script src="{{ asset('/plugins/morris/morris.min.js') }}" type="text/javascript"></script>
-        <!-- Sparkline -->
-        <script src="{{ asset('/plugins/sparkline/jquery.sparkline.min.js') }}" type="text/javascript"></script>
-        <!-- jvectormap -->
-        <script src="{{ asset('/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}" type="text/javascript"></script>
-        <!-- jQuery Knob Chart -->
-        <script src="{{ asset('/plugins/knob/jquery.knob.js') }}" type="text/javascript"></script>
-        <!-- daterangepicker -->
-        <script src="{{ asset('/plugins/daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
-        <!-- datepicker -->
-        <script src="{{ asset('/plugins/datepicker/bootstrap-datepicker.js') }}" type="text/javascript"></script>
-        <!-- Bootstrap WYSIHTML5 -->
-        <script src="{{ asset('/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}" type="text/javascript"></script>
-        <!-- iCheck -->
-        <script src="{{ asset('/plugins/iCheck/icheck.min.js') }}" type="text/javascript"></script>
-        <!-- Slimscroll -->
-        <script src="{{ asset('/plugins/slimScroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
-        <!-- FastClick -->
-        <script src="{{ asset('/plugins/fastclick/fastclick.min.js') }}"></script>
-        <!-- AdminLTE App -->
+
+
         <script src="{{ asset('/dist/js/app.min.js') }}" type="text/javascript"></script>
 
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="{{ asset('/dist/js/pages/dashboard.js') }}" type="text/javascript"></script>
 
-        <!-- AdminLTE for demo purposes -->
-        <script src="{{ asset('/dist/js/demo.js') }}" type="text/javascript"></script></body>
+        <!--Language file for the calendar-->
+         <script src="{{ asset('/plugins/fullcalendar-2.3.1/lib/moment.min.js') }}" type="text/javascript"></script>
+         <script src="{{ asset('/plugins/fullcalendar-2.3.1/fullcalendar.js') }}" type="text/javascript"></script>
 
+
+        <script src="{{ asset('/plugins/fullcalendar/lang-all.js') }}" type="text/javascript"></script></body>
+
+          <!--Our  script -->
+                <script src="{{ asset('/js/our.js') }}" type="text/javascript"></script>
+</body>
 </html>

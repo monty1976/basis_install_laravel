@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+
+use App\User;
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller {
 
 	/*
@@ -20,7 +24,7 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth');
+		//$this->middleware('auth');
 	}
 
 	/**
@@ -30,6 +34,25 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+
+        //dd(Auth::user()->role);
+
+        $users = User::all();
+
+        if($users->isEmpty()){
+
+             User::create([
+                'first_name' => 'Rene',
+                'last_name' => 'Thomassen',
+                'password' => bcrypt('test'),
+                'email' => 'nappelobo@hotmail.com',
+                'role_id' => '1',
+                'is_public' => '1',
+                'adress_id' => '1',
+            ]);
+        }
+
+
         //creates an error message
         $this->createErrorMessage('Dette er en fejl');
 
