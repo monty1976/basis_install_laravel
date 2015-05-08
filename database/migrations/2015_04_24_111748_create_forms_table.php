@@ -16,7 +16,8 @@ class CreateFormsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('description');
-			$table->date('date');
+			$table->date('date_from');
+                        $table->date('date_to');
 			$table->time('time_start');
 			$table->time('time_end');
                         /*** Foreign key ***/
