@@ -22,7 +22,7 @@
          <script src="{{ asset('/plugins/fullcalendar-2.3.1/fullcalendar.js') }}" type="text/javascript"></script>
 
 
-        <script src="{{ asset('/plugins/fullcalendar/lang-all.js') }}" type="text/javascript"></script></body>
+        <script src="{{ asset('/plugins/fullcalendar/lang-all.js') }}" type="text/javascript"></script>
 
           <!--Our  script -->
                 <script src="{{ asset('/js/our.js') }}" type="text/javascript"></script>

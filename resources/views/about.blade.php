@@ -1,0 +1,1 @@
+@include('layout.subpage_text_images')
