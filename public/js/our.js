@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     $('#calendar').fullCalendar({
         lang: 'da',
-        defaultDate: '2015-02-12',
+        defaultDate: Date.now(),
         editable: true,
         eventLimit: true, // allow "more" link when too many events
         events: evt,

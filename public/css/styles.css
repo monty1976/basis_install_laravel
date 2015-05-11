@@ -1,0 +1,56 @@
+/* 
+    Created on : 07-05-2015, 13:35:16
+    Author     : Benedicte
+*/
+
+/*------------------------------------------------
+        #NAVIGATION
+--------------------------------------------------*/
+/*#navbarMain.navbar.navbar-inverse.Menu{
+    margin-bottom: 0px;
+}*/
+
+.navbar {
+/*    background-color: #505051;
+    height: 125px;*/
+    border-radius: 0px;
+}
+/*a.navbar-brand {
+    height: 130px;
+}*/
+
+/*.navbar.navbar-default.navLogin{
+    background-color: #505051;
+    padding-top: 0px;
+}*/
+
+.navbar.navbar-default.navLogin
+/*.navbar.navbar-default.menu*/{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background-color: white;
+}
+
+.navbar.navbar-default.menu{
+    background-color: #222; 
+}
+
+/*------------------------------------------------
+        #FOOTER
+--------------------------------------------------*/
+.footer {
+    height: auto;
+    width: 100%;
+    background-color: #222;
+    padding-top: 50px;
+    margin-top: 25px;
+    padding-bottom: 50px;
+    margin-bottom:  25px;
+}
+
+/* Font-color in footer */
+.footer, .footer a, .footer a:hover {
+    color: #fff;
+    font-weight: lighter;
+}
