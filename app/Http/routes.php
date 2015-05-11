@@ -15,11 +15,19 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+//pages
+Route::get('policies', 'PageController@policy');
+Route::get('about', 'PageController@about');
+
 //parents
 Route::get('parent', 'ParentController@index');
 
 //child
-Route::get('child/{id}', 'ChildController@index');
+//Route::get('child/{id}', 'ChildController@index');
+Route::get('child/{id}', 'ChildController@show');
+
+//form
+Route::post('form', 'FormController@registerForm');
 
 //auth
 Route::controllers([
