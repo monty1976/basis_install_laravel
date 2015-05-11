@@ -12,7 +12,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	/**
 	 * The database table used by the model.
-	 *
+	 *  
 	 * @var string
 	 */
 	protected $table = 'users';
@@ -44,6 +44,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     function children()
     {
-        return $this->belongsToMany('App\Child');
+        return $this->belongsToMany('App\Child\Child');
     }
 }
