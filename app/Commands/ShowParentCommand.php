@@ -30,6 +30,7 @@ class ShowParentCommand extends Command implements SelfHandling {
 	public function handle(UserRepositoryInterface $userRepo, NurseryRepositoryInterface $nurseRepo)
 	{
         $children =  $userRepo->getChildrenActivitiesByUser($this->user);
+        //dd($children);
         //hvordan håndtere vi hele børnehaven?? det er lidt dumt at 3 er hardcoded ind
         $kindergarten = $nurseRepo->getNurseryActivitiesById(3);
 
