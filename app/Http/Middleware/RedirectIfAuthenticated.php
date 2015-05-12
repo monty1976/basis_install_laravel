@@ -33,8 +33,13 @@ class RedirectIfAuthenticated {
 	 */
 	public function handle($request, Closure $next)
 	{
+            //dd($this->auth->check());
+            
 		if ($this->auth->check())
 		{
+                    //dd($this->auth);
+                    //if($this->auth->ro)
+                    
 			return new RedirectResponse(url('/home'));
 		}
 
