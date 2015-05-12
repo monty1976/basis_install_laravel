@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@index');
+
+Route::get('logout','WelcomeController@logout');
 
 Route::get('home', 'HomeController@index');
 
@@ -33,6 +35,7 @@ Route::post('form', 'FormController@registerForm');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
+    
 ]);
 
 Route::get('activity', 'ActivityController@createActivity');
