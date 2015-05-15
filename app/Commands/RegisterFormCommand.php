@@ -14,7 +14,8 @@ class RegisterFormCommand extends Command implements SelfHandling {
     /**
         * @var
         */
-       private $date;
+       private $date_from;
+       private $date_to;
        private $description;
        private $time_start;
        private $time_end;
