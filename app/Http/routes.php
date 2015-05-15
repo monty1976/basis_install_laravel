@@ -24,12 +24,18 @@ Route::get('about', 'PageController@about');
 //parents
 Route::get('parent', 'ParentController@index');
 
+//employees
+Route::get('employee', 'EmployeeController@index');
+
 //child
 //Route::get('child/{id}', 'ChildController@index');
 Route::get('child/{id}', 'ChildController@show');
 
 //form
 Route::post('form', 'FormController@registerForm');
+
+//post
+Route::post('post', 'PostController@registerPost');
 
 //auth
 Route::controllers([

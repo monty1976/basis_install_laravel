@@ -16,13 +16,7 @@ class FormController extends Controller
         $this->dispatchFrom(RegisterFormCommand::class, $request);
         
         $this->createErrorMessage("det var godt");
-        
-        
-        
-        
-        
-        
-        
+
         return \Illuminate\Support\Facades\Redirect::back();
     }
 
