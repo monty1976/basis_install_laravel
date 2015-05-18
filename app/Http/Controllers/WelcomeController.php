@@ -35,23 +35,10 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-        Mail::send('emails.welcome', array('key' => 'value'), function($message)
-        {
-            $message->to('renethomassen@hotmail.com', 'Rene')->subject('Hilsen!');
-        });
-
-        JavaScriptFacade::put([
-            'foo' => 'bar',
-            'age' => 29
-        ]);
-
-
-        $images = Image::find(1);
-
-//        dd($images);
-
-
-		return view('test', compact('images'));
+            Mail::send('emails.welcome', array('key' => 'value'), function($message)
+            {
+                $message->to('renethomassen@hotmail.com', 'Rene')->subject('Hilsen!');
+            });
 	}
 
 }

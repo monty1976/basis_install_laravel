@@ -12,5 +12,9 @@ class Child extends Model {
     function nursery(){
         return $this->belongsTo('App\Nursery\Nursery');
     }
+    
+    public function post(){
+        return $this->belongsTo('App\Post\Post');
+    }
 
 }

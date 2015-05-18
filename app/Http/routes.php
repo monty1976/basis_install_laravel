@@ -20,22 +20,33 @@ Route::get('home', 'HomeController@index');
 //pages
 Route::get('policies', 'PageController@policy');
 Route::get('about', 'PageController@about');
+Route::get('contact', 'PageController@contact');
 
 //parents
-Route::get('parent', 'ParentController@index');
+Route::get('parent', [
+    'as' => 'parent', 
+    'uses' => 'ParentController@index'
+]);
+
+Route::get('parent/profile', [
+    'as' => 'parent_profile', 
+    'uses' => 'ParentController@profile'
+]);
+Route::post('parent/profile', 'ParentController@editProfile');
 
 //employees
 Route::get('employee', 'EmployeeController@index');
 
 //child
-//Route::get('child/{id}', 'ChildController@index');
-Route::get('child/{id}', 'ChildController@show');
+//Route::get('child/{id}', 'ChildController@show');
+Route::get('child/{id}', 'ChildController@show1');
 
 //form
 Route::post('form', 'FormController@registerForm');
 
 //post
 Route::post('post', 'PostController@registerPost');
+
 
 //auth
 Route::controllers([

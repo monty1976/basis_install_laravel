@@ -19,10 +19,6 @@ class EmployeeController extends Controller {
         
         $nursery = $user->nursery()->first();
         //dd($nursery);
-        
-
-       
-
         return view("employee.index", compact('nursery'));
     }
 

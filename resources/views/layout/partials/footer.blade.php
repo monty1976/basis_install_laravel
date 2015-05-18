@@ -15,11 +15,26 @@
             </div>
             <div class="col-md-4">
                 <h4>Åbningstider</h4>
-                <p>Mandag: 06.30 - 17.30<br>
-                    Tirsdag: 06.30 - 17.30<br>
-                    Onsdag: 06.30 - 17.30<br>
-                    Torsdag: 06.30 - 17.30<br>
-                    Fredag: 06.30 - 17.30</p>
+                <div class="row">
+                    <div class="col-md-2">Mandag</div>
+                    <div class="col-md-10">06.30 - 17.30</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Tirsdag</div>
+                    <div class="col-md-10">06.30 - 17.30</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Onsdag</div>
+                    <div class="col-md-10">06.30 - 17.30</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Torsdag</div>
+                    <div class="col-md-10">06.30 - 17.30</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Fredag</div>
+                    <div class="col-md-10">06.30 - 17.30</div>
+                </div>
             </div>
         </div>
     </div>

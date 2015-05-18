@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ URL::asset('css/margins_padding.css') }}" type="text/css"/>
         
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script>

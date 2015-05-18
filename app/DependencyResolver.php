@@ -13,6 +13,9 @@ class DependencyResolver extends ServiceProvider{
         $this->app->bind('App\Child\ChildRepositoryInterface', 'App\Child\ChildRepository');
         $this->app->bind('App\Form\FormRepositoryInterface', 'App\Form\FormRepository');
         $this->app->bind('App\Post\PostRepositoryInterface', 'App\Post\PostRepository');
+        $this->app->bind('App\Adress\AdressRepositoryInterface', 'App\Adress\AdressRepository');
+        $this->app->bind('App\Postal\PostalRepositoryInterface', 'App\Postal\PostalRepository');
+        $this->app->bind('App\Phone\PhoneRepositoryInterface', 'App\Phone\PhoneRepository');
         
     }
 }

@@ -14,7 +14,7 @@
             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                     {!! Form::open(array('url' => 'form'), ['class' => 'form-horizontal']) !!}
-                    {!! Form::text('child_id', $child->id) !!}
+                    {!! Form::hidden('child_id', $child->id) !!}
                     <div class="form-group">
                         {!! Form::label('children', 'Barn') !!}
                         {{$child->first_name}} {{$child->last_name}}
@@ -64,34 +64,44 @@
                 </div>
             </div>
         </div>
-        
-        
-        
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading1">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        Opslagstavle
-                    </a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Opslagstavle</a>
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
-                    <div>
-                        <h5>Bla bla bla</h5>
-                        <p>20-05-2015</p>
-                    </div>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-                <div class="panel-body">
-                    <div>
-                        <h5>Test test</h5>
-                        <p>15-04-2015</p>
-                    </div>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    @foreach($posts as $post)
+                        <div>
+                            <p>{{$post->date}}</p>
+                            <h4>{{$post->headline}}</h4>
+                        </div>
+                        <p>{{$post->content}}</p>
+                        <hr>
+                    @endforeach
                 </div>
             </div>
         </div>
+        
+        @foreach()
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapsed" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Sovetider</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                        <div>
+                            <p></p>
+                            <h4></h4>
+                        </div>
+                        <p></p>
+                </div>
+            </div>
+        </div>
+        @endforeach
         
     </div>
 </div>
