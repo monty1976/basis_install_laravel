@@ -32,14 +32,29 @@ Route::get('parent/profile', [
     'as' => 'parent_profile', 
     'uses' => 'ParentController@profile'
 ]);
+
 Route::post('parent/profile', 'ParentController@editProfile');
 
 //employees
 Route::get('employee', 'EmployeeController@index');
 
+Route::get('employee/post', [
+    'as' => 'employee_post',
+    'uses' => 'EmployeeController@post'
+]);
+
+Route::get('employee/sleep', [
+    'as' => 'employee_sleep',
+    'uses' => 'EmployeeController@sleep'
+]);
+
+Route::get('employee/activity', [
+    'as' => 'employee_activity',
+    'uses' => 'EmployeeController@activity'
+]);
+
 //child
-//Route::get('child/{id}', 'ChildController@show');
-Route::get('child/{id}', 'ChildController@show1');
+Route::get('child/{id}', 'ChildController@show');
 
 //form
 Route::post('form', 'FormController@registerForm');
@@ -47,12 +62,13 @@ Route::post('form', 'FormController@registerForm');
 //post
 Route::post('post', 'PostController@registerPost');
 
+//sleep
+Route::post('sleep', 'SleepController@registerSleep');
 
 //auth
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
-    
 ]);
 
 Route::get('activity', 'ActivityController@createActivity');

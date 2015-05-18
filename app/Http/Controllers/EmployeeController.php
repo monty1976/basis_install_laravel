@@ -21,5 +21,24 @@ class EmployeeController extends Controller {
         //dd($nursery);
         return view("employee.index", compact('nursery'));
     }
-
+    
+    public function post(){
+        $user = Auth::user();
+        
+        $nursery = $user->nursery()->first();
+        
+        return view('employee.post', compact('nursery'));
+    }
+    
+    public function sleep(){
+        //$user = Auth::user();
+        
+        return view('employee.sleep');
+    }
+    
+    public function activity(){
+        //$user = Auth::user();
+        
+        return view('employee.activity');
+    }
 }

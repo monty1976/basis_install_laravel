@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin - Dashboard</title>
+	<title>Employee - Dashboard</title>
 
 	 <!-- Bootstrap 3.3.2 -->
         <link href="{{ asset('/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -22,10 +22,6 @@
 
         <link href="{{ asset('/plugins/fullcalendar-2.3.1/fullcalendar.css') }}" rel="stylesheet" type="text/css" />
 
-
-
-
-
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -37,7 +33,7 @@
 
  <div class="wrapper">
             @include('include.header')
-            @include('include.sidebar')
+            @include('layout.employee.sidebar_employee')
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
@@ -64,11 +60,4 @@
                 <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
             </footer>
         </div><!-- ./wrapper -->
-
-
-
-
 @include('include.footer')
-
-
-

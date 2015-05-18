@@ -8,7 +8,7 @@ use App\Commands\RegisterPostCommand;
 use Illuminate\Http\Request;
 
 class PostController extends Controller {
-
+ 
     public function registerPost(PostRequest $request)
     {
         $this->dispatchFrom(RegisterPostCommand::class, $request);

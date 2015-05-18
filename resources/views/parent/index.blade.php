@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.parent.dashboard_parent')
 @section('content')
 
 <div class="container">
