@@ -10,4 +10,5 @@ namespace App\Nursery;
 interface NurseryRepositoryInterface
 {
     public function getNurseryActivitiesById($id);
+    
 }

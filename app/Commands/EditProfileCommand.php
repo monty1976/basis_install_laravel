@@ -6,7 +6,7 @@ use App\Adress\AdressRepositoryInterface;
 use App\Phone\PhoneRepositoryInterface;
 
 use Illuminate\Contracts\Bus\SelfHandling;
-
+use Illuminate\Support\Facades\Hash;
 class EditProfileCommand extends Command implements SelfHandling {
 
 	/**
@@ -14,7 +14,7 @@ class EditProfileCommand extends Command implements SelfHandling {
 	 *
 	 * @return void
 	 */
-	public function __construct($first_name, $last_name,$email, $street, $number ,$postal_code, $phone)
+	public function __construct($first_name, $last_name,$email, $street, $number ,$postal_code, $phone, $password, $new_password, $is_public)
 	{
             $this->first_name = $first_name;
             $this->last_name = $last_name;
@@ -23,6 +23,10 @@ class EditProfileCommand extends Command implements SelfHandling {
             $this->number = $number;
             $this->postal_code = $postal_code;
             $this->phone = $phone;
+            $this->password = $password;
+            $this->new_password = $new_password;
+            
+            $this->is_public = $is_public;
 	}
 
 	/**
@@ -40,7 +44,14 @@ class EditProfileCommand extends Command implements SelfHandling {
             $user->first_name = $this->first_name;
             $user->last_name = $this->last_name;
             $user->email = $this->email;
+            
+            if(Hash::check($this->password, $user->password))
+            {
+                $user->password = Hash::make($this->new_password);
+            }
 
+            $user->is_public = $this->is_public;
+            
             $user->save();
 
             //Save adress inputs in the database

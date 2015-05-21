@@ -33,12 +33,14 @@ class EmployeeController extends Controller {
     public function sleep(){
         //$user = Auth::user();
         
+        //return redirect()->route('sleep');
         return view('employee.sleep');
     }
-    
+
     public function activity(){
         //$user = Auth::user();
         
+        //return redirect()->route('activity');
         return view('employee.activity');
     }
 }

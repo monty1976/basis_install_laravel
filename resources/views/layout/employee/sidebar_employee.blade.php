@@ -26,6 +26,9 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li>
+                <a href="{{route('employee')}}">Dashboard</a>
+            </li>
+            <li>
                 <a href="employee/post">Opret post</a>
             </li>
             <li>

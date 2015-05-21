@@ -15,8 +15,8 @@ class CreateSleepsTable extends Migration {
 		Schema::create('sleeps', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->time('start');
-			$table->time('end');
+			$table->string('start');
+			$table->string('end');
 			$table->date('date');
                         /*** Foreign key ***/
                         $table->integer('child_id')->unsigned();

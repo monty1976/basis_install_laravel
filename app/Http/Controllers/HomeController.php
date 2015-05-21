@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller {
     /*
@@ -57,6 +58,10 @@ class HomeController extends Controller {
         $this->createSuccessMessage('JUHUU det gik godt');
 
         return view('home');
+    }
+    
+    public function passwordfunction(){
+        return Hash::make('test');
     }
 
 }

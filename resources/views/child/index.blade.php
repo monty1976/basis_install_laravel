@@ -72,37 +72,35 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
-                    @foreach($posts as $post)
-                        <div>
-                            <p>{{$post->date}}</p>
-                            <h4>{{$post->headline}}</h4>
-                        </div>
-                        <p>{{$post->content}}</p>
-                        <hr>
+                    @foreach($post_with_nursery as $posts)
+                        <p><img style="border: none; background-color: #{{$posts->nursery->nursery_color}}" height="12" width="12">&nbsp;&nbsp;{{$posts->nursery->nursery_name}}</p>
+                        <p>{{$posts->date}}</p>
+                        <h4>{{$posts->headline}}</h4>
+                        <p>{{$posts->content}}</p>
+                        <hr> 
                     @endforeach
                 </div>
             </div>
         </div>
         
-        
+        @if(count($sleeps) > 0)
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" role="tab" id="heading1">
                 <h4 class="panel-title">
-                    <a data-toggle="collapsed" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Sovetider</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Sovetider</a>
                 </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
-                        <div>
-                            <p></p>
-                            <h4></h4>
-                        </div>
-                        <p></p>
+                    @foreach($sleeps as $sleep)
+                        <p>{{$sleep->date}}</p>
+                        <p>Fra: {{$sleep->start}} - Til: {{$sleep->end}}</p>
+                        <hr>
+                    @endforeach
                 </div>
             </div>
         </div>
-       
-        
+        @endif
     </div>
 </div>
 @endsection

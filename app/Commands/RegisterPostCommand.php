@@ -40,6 +40,8 @@ class RegisterPostCommand extends Command implements SelfHandling {
             $date_dk = $this->date;
             $format = "d-m-Y";
             $date_eng = date_create_from_format($format, $date_dk);
+            
+            //Save inputs in database
             $post->date = $date_eng;
             $post->headline = $this->headline;
             $post->content = $this->content;

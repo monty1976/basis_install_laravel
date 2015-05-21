@@ -12,6 +12,7 @@ use App\Http\Requests;
 use App\Nursery;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class ParentController extends Controller {
 
@@ -37,9 +38,7 @@ class ParentController extends Controller {
     public function profile()
     {
         $user = Auth::user();
-        //$user = $this->user->getUserById($id);
-        //dd($user);
-        
+
         $adress = $this->adressRepo->getAdressById($user->adress_id);
         //dd($adress);
         
@@ -49,13 +48,35 @@ class ParentController extends Controller {
         $phone = $this->phoneRepo->getPhoneNumberByUserId($user->id);
         //dd($phones);
 
-        return view("parent.profile", compact('user', 'adress', 'postal_codes', 'phone'));
+        if($user->is_public === 0){
+            $checkboxClass = [];
+        }
+        else{
+            $checkboxClass = ['checked' => 'checked'];
+        }
+
+        return view("parent.profile", compact('user', 'adress', 'postal_codes', 'phone', 'checkboxClass'));
     }
     
     public function editProfile(Request $request)
     {
-        $this->dispatchFrom(EditProfileCommand::class, $request);
-
+        $first_name = Input::get('first_name');
+        $last_name = Input::get('last_name');
+        $email = Input::get('email');
+        $street = Input::get('street');
+        $number = Input::get('number');
+        $postal_code = Input::get('postal_code');
+        $phone = Input::get('phone');
+        $password = Input::get('password');
+        $new_password = Input::get('new_password');      
+        $is_public = Input::get('is_public');
+        
+        if($is_public === null){
+            $is_public = 0;
+        }
+        
+        $this->dispatch(new EditProfileCommand($first_name, $last_name, $email, $street, $number, $postal_code, $phone, $password, $new_password, $is_public));
+        
         return redirect()->route('parent');
     }
 }

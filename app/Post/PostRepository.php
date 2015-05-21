@@ -2,8 +2,8 @@
 
 class PostRepository implements PostRepositoryInterface {
     
-    public function getPostByNurseryId($nursery_id){
-        return Post::where('nursery_id', '=', $nursery_id)->take(3)->orderBy('date', 'desc')->get();
+    public function getPostForNurseries($nursery_id){
+        return Post::where('nursery_id', '=', $nursery_id)->orWhere('nursery_id', '=', 3)->with('nursery')->take(5)->orderBy('date', 'desc')->get();
     }
 
     public function insertPost(Post $post){

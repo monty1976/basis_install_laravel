@@ -1,24 +1,28 @@
 <?php namespace App\Http\Controllers;
 
-use App\Child\Child;
-use App\FormType\FormType;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Child\ChildRepositoryInterface;
 use App\Form\FormRepositoryInterface;
 use App\Post\PostRepositoryInterface;
-use App\Nursery\Nursery;
+use App\Sleep\SleepRepositoryInterface;
+use App\Nursery\NurseryRepositoryInterface;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 class ChildController extends Controller {
 
-    public function __construct(ChildRepositoryInterface $childRepo, FormRepositoryInterface $formTypeRepo, PostRepositoryInterface $postRepo)
-    {
+    public function __construct(ChildRepositoryInterface $childRepo, 
+                                FormRepositoryInterface $formTypeRepo, 
+                                PostRepositoryInterface $postRepo, 
+                                SleepRepositoryInterface $sleepRepo,
+                                NurseryRepositoryInterface $nurseryRepo){
         $this->childRepo = $childRepo;
         $this->form_typeRepo = $formTypeRepo;
         $this->postRepo = $postRepo;
+        $this->sleepRepo = $sleepRepo;
+        $this->nurseryRepo = $nurseryRepo;
     }
      
     public function show($id)
@@ -29,8 +33,15 @@ class ChildController extends Controller {
         //$form_types = FormType::lists('form_type_name', 'id'); 
         $form_types = $this->form_typeRepo->getFormTypes();
         
-        $posts = $this->postRepo->getPostByNurseryId($child->nursery_id);
+        //Show posts with the child's nursery_id and the institution's id
+        $post_with_nursery = $this->postRepo->getPostForNurseries($child->nursery_id);
 
-        return view('child.index', compact('child', 'form_types', 'posts'));
+//dd($post_with_nursery);
+        
+        //Show sleeping time
+        $sleeps = $this->sleepRepo->getChildSleeps($child->id);
+        //dd($sleeps);
+
+        return view('child.index', compact('child', 'form_types', 'post_with_nursery', 'sleeps'));
     }
 }

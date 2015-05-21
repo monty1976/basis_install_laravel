@@ -2,3 +2,9 @@
 
 <p>Sendt fra laravel via mandril</p>
 
+<p>{{$data}}</p>
+
+
+Med venlig hilsen
+
+{{$user->}}

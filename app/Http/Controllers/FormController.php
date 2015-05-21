@@ -11,8 +11,6 @@ class FormController extends Controller
 {
     public function registerForm(FormRequest $request)
     {
-        //dd(Input::all());
-        
         $this->dispatchFrom(RegisterFormCommand::class, $request);
         
         $this->createErrorMessage("det var godt");

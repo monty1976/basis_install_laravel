@@ -12,7 +12,7 @@
             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                     {!! Form::open(array('url' => 'post'), ['class' => 'form-horizontal']) !!}
-                    {!! Form::text('nursery_id', $nursery->id) !!}
+                    {!! Form::hidden('nursery_id', $nursery->id) !!}
                     <div class="form-group">
                         {!! Form::label('date', 'Dato') !!}
                         {!! Form::text('date', '', ['id' => 'datepicker']) !!}
@@ -34,9 +34,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection
-
-
-

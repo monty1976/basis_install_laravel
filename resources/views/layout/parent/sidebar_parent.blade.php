@@ -26,9 +26,11 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li>
-                <a href="parent/profile">Rediger kontaktinfo</a>
+                <a href="{{route('parent')}}">Forældre</a>
             </li>
-            
+            <li>
+                <a href="{{route('parent_profile')}}">Kontaktinformation</a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

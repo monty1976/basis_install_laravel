@@ -15,6 +15,8 @@ Route::get('/', 'HomeController@index');
 
 Route::get('logout','WelcomeController@logout');
 
+Route::get('mail','MailController@index');
+
 Route::get('home', 'HomeController@index');
 
 //pages
@@ -36,25 +38,23 @@ Route::get('parent/profile', [
 Route::post('parent/profile', 'ParentController@editProfile');
 
 //employees
-Route::get('employee', 'EmployeeController@index');
-
-Route::get('employee/post', [
-    'as' => 'employee_post',
-    'uses' => 'EmployeeController@post'
+Route::get('employee', [
+    'as' => 'employee',
+    'uses' =>'EmployeeController@index'
 ]);
 
-Route::get('employee/sleep', [
-    'as' => 'employee_sleep',
-    'uses' => 'EmployeeController@sleep'
-]);
+Route::get('employee/post', 'EmployeeController@post');
+
+Route::get('employee/sleep', 'EmployeeController@sleep');
 
 Route::get('employee/activity', [
-    'as' => 'employee_activity',
+    'as' => 'activity',
     'uses' => 'EmployeeController@activity'
 ]);
 
 //child
 Route::get('child/{id}', 'ChildController@show');
+
 
 //form
 Route::post('form', 'FormController@registerForm');
@@ -63,13 +63,17 @@ Route::post('form', 'FormController@registerForm');
 Route::post('post', 'PostController@registerPost');
 
 //sleep
+Route::get('employee/sleep', 'SleepController@showChildrenNames');
 Route::post('sleep', 'SleepController@registerSleep');
 
 //auth
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
 ]);
 
+//activity
 Route::get('activity', 'ActivityController@createActivity');
 Route::post('activity', 'ActivityController@registerActivity');
+
+Route::get('passwordfunction', 'HomeController@passwordfunction');

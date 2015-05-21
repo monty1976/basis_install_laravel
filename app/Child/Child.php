@@ -17,4 +17,7 @@ class Child extends Model {
         return $this->belongsTo('App\Post\Post');
     }
 
+    public function sleep(){
+        return $this->belongsToMany('App\Sleep\Sleep');
+    }
 }

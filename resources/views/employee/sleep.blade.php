@@ -6,27 +6,37 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Opret sovetid</a>
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Sovetid</a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
-                    {!! Form::open() !!}
+                    {!! Form::open(array('url' => 'sleep'), ['class' => 'form-horizontal']) !!}
                     
+                    <div class="form-group">
+                        {!! Form::label('fullname', 'Vælg barn') !!}
+                        <div class="dropdown">
+                            {!! Form::select('fullname', $children) !!}
+                        </div>
+                    </div>
                     <div class="form-group">
                         {!! Form::label('date', 'Dato') !!}
                         {!! Form::text('date', '', ['id' => 'datepicker']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('headline', 'Overskrift') !!}
-                        {!! Form::text('headline', null, ['class' => 'form-control']) !!}
+                        <div class="row">
+                            <div class="col-md-6">
+                                {!! Form::label('start', 'Tid start') !!}
+                                {!! Form::text('start', null, ['class' => 'form-control']) !!}
+                            </div>
+                            <div class="col-md-6">
+                                {!! Form::label('end', 'Tid til') !!}
+                                {!! Form::text('end', null, ['class' => 'form-control']) !!}
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('content', 'Beskrivelse') !!}
-                        {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group">
-                        {!! Form::submit('', ['class' => 'btn btn-primary form-control']) !!}
+                        {!! Form::submit('Register sovetid', ['class' => 'btn btn-primary form-control']) !!}
                     </div>
                     {!! Form::close() !!}
                 </div>

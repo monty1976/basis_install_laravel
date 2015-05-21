@@ -27,8 +27,8 @@ class ShowParentCommand extends Command implements SelfHandling {
      * @param NurseryRepositoryInterface $nurseRepo
      * @return void
      */
-	public function handle(UserRepositoryInterface $userRepo, NurseryRepositoryInterface $nurseRepo)
-	{
+    public function handle(UserRepositoryInterface $userRepo, NurseryRepositoryInterface $nurseRepo)
+    {
         $children =  $userRepo->getChildrenActivitiesByUser($this->user);
         //dd($children);
         //hvordan håndtere vi hele børnehaven?? det er lidt dumt at 3 er hardcoded ind
@@ -59,6 +59,6 @@ class ShowParentCommand extends Command implements SelfHandling {
 
         JavaScriptFacade::put(['content' =>$jsonEvents ]);
         return $children;
-	}
+    }
 
 }
