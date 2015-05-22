@@ -17,4 +17,8 @@ class Nursery extends Model {
     public function nursery_type(){
         return $this->belongsTo('App\Nursery\NurseryType');
     }
+    
+    public function users(){
+        return $this->belongsToMany('App\User\User');
+    }
 }

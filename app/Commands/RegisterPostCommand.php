@@ -3,17 +3,25 @@
 use App\Commands\Command;
 use App\Post\Post;
 use App\Post\PostRepositoryInterface;
+use App\Child\ChildRepositoryInterface;
+use App\Nursery\NurseryRepositoryInterface;
 use App\Helpers\MailTrait;
+use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class RegisterPostCommand extends Command implements SelfHandling {
     
-    use MailTrait;
+    //use MailTrait;
 
     private $date;
     private $headline;
     private $content;
+    
+    private $data = [];
+    private $mailTo = [];
+    private $mailFrom = 'info@boerneriget';
+    private $subject = 'Ny besked fra Børneriget';
 
 
     /**
@@ -35,10 +43,8 @@ class RegisterPostCommand extends Command implements SelfHandling {
      *
      * @return void
      */
-    public function handle(PostRepositoryInterface $PostRepository)
-    {
-        $user = Auth::user();
-        
+    public function handle(PostRepositoryInterface $PostRepository, NurseryRepositoryInterface $NurseryRepository)
+    {      
         $post = new Post;
 
         //Dateformat
@@ -52,19 +58,53 @@ class RegisterPostCommand extends Command implements SelfHandling {
         $post->content = $this->content;
         $post->nursery_id = $this->nursery_id;
 
-        $data = ['date' => $date_dk,
-                'headline' => $post->headline,
-                'content' => $post->content];
+        //Whom to sending the email to
+        $nursery = $NurseryRepository->getNurseryUsers($this->nursery_id);
         
-        $mailTo = 'benevc76@hotmail.com'; //Loop through the parents
-        $nameTo = 'Benedicte'; //the name of the parent the mail is being sent to
-        $mailFrom = 'info@boerneriget';
-        $subject = 'Ny besked fra Børneriget';
+         //$this->sendMail('emails.test', '$data', 'renethomassen@hotmail.com', '$nameTo', 'renethomassen@hotmail.com', '$subject');
+        //Loop through users
         
+        
+        foreach($nursery->users as $user){
+           if($user->role_id === 2){
+               
+               $temp = [];
+              
+                $user_fullname = $user->first_name . " " . $user->last_name;
+                
+                $this->data = ['date' => $date_dk,
+                    'headline' => $post->headline,
+                    'content' => $post->content,
+                    'user_name' => $user_fullname,
+                    'nursery_name' => $nursery->nursery_name];
+                //dd('hej');
+                 array_push($temp, $user->email);
+                
+                 $this->mailTo = $temp;
+                //$nameTo = $user->first_name; //the name of the parent the mail is being sent to
+                
+                
+                
+                //Sending mail
+               
+                
+                
+                //dd($user);
+                
+            }    
+            dd($this->data);
+             $this->sendMail('emails.test', $this->data, $this->mailTo, $this->mailFrom, $this->subject);
+        }
         $PostRepository->insertPost($post);
-        
-        //Sending mail
-        $this->sendMail('emails.welcome', $data, $mailTo, $nameTo, $mailFrom, $subject);
     }
-
+    
+    public function sendMail($template, $data, $mailTo, $mailFrom, $subject){
+        Mail::send($template, compact('data'), function($message) use ($mailTo, $mailFrom, $subject){
+            $message->to($mailTo)->from($mailFrom)->subject($subject);
+        });
+    }
+    
+    private function send($template, $data, $mailTo, $nameTo, $mailFrom, $subject){
+        $this->sendMail($template, $data, $mailTo, $nameTo, $mailFrom, $subject);
+    }
 }

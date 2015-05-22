@@ -36,12 +36,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 
     //User belongs to a Role
-    public function role(){
+    public function role()
+    {
         return $this->belongsTo('App\Role');
     }
 
     //User has many children
-
     function children()
     {
         return $this->belongsToMany('App\Child\Child');
@@ -52,6 +52,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->belongsToMany('App\Nursery\Nursery');
     }
     
+   
     public function address()
     {
         return $this->belongTo('App\Adress\Adress');

@@ -11,4 +11,6 @@ interface NurseryRepositoryInterface
 {
     public function getNurseryActivitiesById($id);
     
+    public function getNurseryUsers($nurser_id);
+    
 }
