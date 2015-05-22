@@ -15,11 +15,8 @@ Route::get('/', 'HomeController@index');
 
 Route::get('logout','WelcomeController@logout');
 
-Route::get('mail','MailController@index');
-
-Route::get('home', 'HomeController@index');
-
 //pages
+Route::get('home', 'HomeController@index');
 Route::get('policies', 'PageController@policy');
 Route::get('about', 'PageController@about');
 Route::get('contact', 'PageController@contact');
@@ -36,6 +33,9 @@ Route::get('parent/profile', [
 ]);
 
 Route::post('parent/profile', 'ParentController@editProfile');
+
+//form -> when a form is being registered a mail to the institution is sent as well
+Route::post('form', 'FormController@registerForm');
 
 //employees
 Route::get('employee', [
@@ -55,10 +55,6 @@ Route::get('employee/activity', [
 //child
 Route::get('child/{id}', 'ChildController@show');
 
-
-//form
-Route::post('form', 'FormController@registerForm');
-
 //post
 Route::post('post', 'PostController@registerPost');
 
@@ -77,3 +73,7 @@ Route::get('activity', 'ActivityController@createActivity');
 Route::post('activity', 'ActivityController@registerActivity');
 
 Route::get('passwordfunction', 'HomeController@passwordfunction');
+
+//mail
+//Route::get('mail','MailController@index');
+//Route::get('mail', 'MailController@sendIllness');

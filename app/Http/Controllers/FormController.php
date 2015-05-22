@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Commands\RegisterFormCommand;
 use App\Http\Requests\FormRequest;
+use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Http\Request;
 
@@ -13,9 +14,9 @@ class FormController extends Controller
     {
         $this->dispatchFrom(RegisterFormCommand::class, $request);
         
-        $this->createErrorMessage("det var godt");
+        $this->createSuccessMessage("Mail sendt til Børneriget og dig selv");
 
-        return \Illuminate\Support\Facades\Redirect::back();
+        return Redirect::back();
     }
 
 }

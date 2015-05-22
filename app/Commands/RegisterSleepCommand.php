@@ -3,10 +3,13 @@
 use App\Commands\Command;
 use App\Sleep\SleepRepositoryInterface;
 use App\Sleep\Sleep;
+use App\Helpers\MailTrait;
 
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class RegisterSleepCommand extends Command implements SelfHandling {
+    
+    use MailTrait;
     
     /**
     * @var
