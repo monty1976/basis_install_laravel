@@ -8,4 +8,8 @@ class UserRepository implements UserRepositoryInterface
         return $user->children()->with(['nursery.activities'])->get();
     }
     
+    public function getNurseryByUser($user){
+        return $user->nursery()->first();
+    }
+    
 } 

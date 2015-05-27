@@ -9,8 +9,6 @@ use Illuminate\Contracts\Bus\SelfHandling;
 
 class RegisterSleepCommand extends Command implements SelfHandling {
     
-    use MailTrait;
-    
     /**
     * @var
     */
@@ -54,5 +52,4 @@ class RegisterSleepCommand extends Command implements SelfHandling {
         
         $SleepRepository->insertSleep($sleep);
     }
-
 }

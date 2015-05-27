@@ -19,6 +19,6 @@ class Nursery extends Model {
     }
     
     public function users(){
-        return $this->belongsToMany('App\User\User');
+        return $this->belongsToMany('App\User\User', 'nursery_user');
     }
 }

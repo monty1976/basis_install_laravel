@@ -12,7 +12,8 @@ class NurseryRepository implements NurseryRepositoryInterface
         return Nursery::where('id', '=', $id)->first();
     }
     
-    public function getNurseryUsers($nurser_id){
-        return Nursery::where('id', '=', $nurser_id)->with(['users'])->first();
+    public function getNurseryUsers($nursery_id){
+        return Nursery::where('id', '=', $nursery_id)->with(['users'])->first();
     }
+    
 } 

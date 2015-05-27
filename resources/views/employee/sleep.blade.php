@@ -16,9 +16,10 @@
                     <div class="form-group">
                         {!! Form::label('fullname', 'Vælg barn') !!}
                         <div class="dropdown">
-                            {!! Form::select('fullname', $children) !!}
+                            {!! Form::select('fullname', $children) !!}     
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         {!! Form::label('date', 'Dato') !!}
                         {!! Form::text('date', '', ['id' => 'datepicker']) !!}

@@ -49,7 +49,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     
     public function nursery()
     {
-        return $this->belongsToMany('App\Nursery\Nursery');
+        return $this->belongsToMany('App\Nursery\Nursery', 'nursery_user');
     }
     
    

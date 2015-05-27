@@ -60,15 +60,12 @@ class RegisterPostCommand extends Command implements SelfHandling {
 
         //Whom to sending the email to
         $nursery = $NurseryRepository->getNurseryUsers($this->nursery_id);
-        
-         //$this->sendMail('emails.test', '$data', 'renethomassen@hotmail.com', '$nameTo', 'renethomassen@hotmail.com', '$subject');
+
         //Loop through users
-        
-        
         foreach($nursery->users as $user){
            if($user->role_id === 2){
                
-               $temp = [];
+                $temp = [];
               
                 $user_fullname = $user->first_name . " " . $user->last_name;
                 
@@ -77,23 +74,14 @@ class RegisterPostCommand extends Command implements SelfHandling {
                     'content' => $post->content,
                     'user_name' => $user_fullname,
                     'nursery_name' => $nursery->nursery_name];
-                //dd('hej');
-                 array_push($temp, $user->email);
                 
-                 $this->mailTo = $temp;
-                //$nameTo = $user->first_name; //the name of the parent the mail is being sent to
-                
-                
-                
-                //Sending mail
-               
-                
-                
-                //dd($user);
-                
+                array_push($temp, $user->email);
+
+                $this->mailTo = $temp;
             }    
-            dd($this->data);
-             $this->sendMail('emails.test', $this->data, $this->mailTo, $this->mailFrom, $this->subject);
+            
+            //Sending mail
+            $this->sendMail('emails.test', $this->data, $this->mailTo, $this->mailFrom, $this->subject);
         }
         $PostRepository->insertPost($post);
     }

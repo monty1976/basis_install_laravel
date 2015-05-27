@@ -15,10 +15,10 @@ class ShowParentCommand extends Command implements SelfHandling {
      * @param $user
      * @return \App\Commands\ShowParentCommand
      */
-	public function __construct($user)
-	{
-		$this->user = $user;
-	}
+    public function __construct($user)
+    {
+        $this->user = $user;
+    }
 
     /**
      * Execute the command.
@@ -55,7 +55,7 @@ class ShowParentCommand extends Command implements SelfHandling {
             array_push($events,$event);
         }
 
-        $jsonEvents=  json_encode($events);
+        $jsonEvents = json_encode($events);
 
         JavaScriptFacade::put(['content' =>$jsonEvents ]);
         return $children;

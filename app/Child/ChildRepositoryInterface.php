@@ -5,6 +5,10 @@ interface ChildRepositoryInterface
 {
     public function getChildById($id);
     
-    public function getAllChildrenNames();
+    //public function getAllChildrenNames();
+    
+    public function getChildUsers($id);
+    
+    public function getChildrenByNursery($nursery);
 }
 

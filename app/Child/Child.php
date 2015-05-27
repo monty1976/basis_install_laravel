@@ -20,4 +20,8 @@ class Child extends Model {
     public function sleep(){
         return $this->belongsToMany('App\Sleep\Sleep');
     }
+    
+    public function users(){
+        return $this->belongsToMany('App\User\User');
+    }
 }

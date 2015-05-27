@@ -69,7 +69,10 @@ Route::controllers([
 ]);
 
 //activity
-Route::get('activity', 'ActivityController@createActivity');
+Route::get('employee/activity', [
+    'as' => 'activity',
+    'uses' => 'ActivityController@showNurseryByUser'
+]);
 Route::post('activity', 'ActivityController@registerActivity');
 
 Route::get('passwordfunction', 'HomeController@passwordfunction');
