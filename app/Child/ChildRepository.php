@@ -21,5 +21,9 @@ class ChildRepository implements ChildRepositoryInterface
                 ->where('nursery_id', '=', $nursery->id)
                 ->lists('fullname', 'id');  
     }
+
+    public function createChild($child){
+        $child->save();
+    }
 }
 

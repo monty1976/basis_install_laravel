@@ -23,4 +23,9 @@ class Post extends Model {
             return $this->belongsTo('App\Nursery\Nursery');
         }
 
+        public function images(){
+            return $this->belongsToMany('App\Image\Image');
+        }
+
+
 }

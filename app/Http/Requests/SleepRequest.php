@@ -30,9 +30,9 @@ class SleepRequest extends Request {
         
         public function messages(){
             return [
-                'date.required' => 'Please enter a date',
-                'start.required' => 'Please enter the starting time',
-                'end.required' => 'Please enter the end time'    
+                'date.required' => 'Angiv en gyldig dato',
+                'start.required' => 'Angiv en start tid',
+                'end.required' => 'Angiv en slut tid'
             ];
         }
 

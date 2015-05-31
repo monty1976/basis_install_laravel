@@ -11,11 +11,11 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
-                    {!! Form::open(array('url' => 'post'), ['class' => 'form-horizontal']) !!}
+                    {!! Form::open(array('url' => 'post', 'files' => true), ['class' => 'form-horizontal']) !!}
                     {!! Form::hidden('nursery_id', $nursery->id) !!}
                     <div class="form-group">
                         {!! Form::label('date', 'Dato') !!}
-                        {!! Form::text('date', '', ['id' => 'datepicker']) !!}
+                        {!! Form::text('date', '', ['id' => 'datepicker', 'class' => 'bootDatePicker']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('headline', 'Overskrift') !!}
@@ -25,6 +25,10 @@
                         {!! Form::label('content', 'Beskrivelse') !!}
                         {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
                     </div>
+                      <div class="form-group">
+                            {!! Form::label('Billede') !!}
+                            {!! Form::file('image', null, ['class' => 'form-control']) !!}
+                        </div>
                     <div class="form-group">
                         {!! Form::submit('Post', ['class' => 'btn btn-primary form-control']) !!}
                     </div>

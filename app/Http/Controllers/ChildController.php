@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Input;
 
 class ChildController extends Controller {
 
-    public function __construct(ChildRepositoryInterface $childRepo, 
+    public function __construct(ChildRepositoryInterface $childRepo,
                                 FormRepositoryInterface $formTypeRepo, 
                                 PostRepositoryInterface $postRepo, 
                                 SleepRepositoryInterface $sleepRepo,
-                                NurseryRepositoryInterface $nurseryRepo){
+                                NurseryRepositoryInterface $nurseryRepo)
+    {
+        $this->middleware('auth');
         $this->childRepo = $childRepo;
         $this->form_typeRepo = $formTypeRepo;
         $this->postRepo = $postRepo;
@@ -36,6 +38,8 @@ class ChildController extends Controller {
         //Show posts with the child's nursery_id and the institution's id
         $post_with_nursery = $this->postRepo->getPostForNurseries($child->nursery_id);
 
+       // dd($post_with_nursery);
+
 //dd($post_with_nursery);
         
         //Show sleeping time
@@ -44,4 +48,9 @@ class ChildController extends Controller {
 
         return view('child.index', compact('child', 'form_types', 'post_with_nursery', 'sleeps'));
     }
+
+
+
+
+
 }

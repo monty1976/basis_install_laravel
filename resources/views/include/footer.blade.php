@@ -23,8 +23,12 @@
 
 
         <script src="{{ asset('/plugins/fullcalendar/lang-all.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('/plugins/datepicker/bootstrap-datepicker.js') }}" type="text/javascript"></script>
+             <script src="{{ asset('/plugins/datepicker/locales/bootstrap-datepicker.da.js') }}" type="text/javascript"></script>
 
           <!--Our  script -->
-                <script src="{{ asset('/js/our.js') }}" type="text/javascript"></script>
+
+           @yield('scripts')
+
 </body>
 </html>

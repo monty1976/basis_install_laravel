@@ -14,6 +14,7 @@ class ActivityController extends Controller {
     
     public function __construct(UserRepositoryInterface $UserRepository) {
         $this->userRepo = $UserRepository;
+        $this->middleware('auth');
     }
     
     public function showNurseryByUser(){
@@ -32,5 +33,4 @@ class ActivityController extends Controller {
         
         return Redirect::back();
     }
-
 }

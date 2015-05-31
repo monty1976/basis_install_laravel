@@ -41,17 +41,19 @@ class ShowParentCommand extends Command implements SelfHandling {
          * find the nursery they are in and the activities for that nursery*/
         foreach($children as $child){
             $color = $child->nursery->nursery_color;
+            $nurseryName = $child->nursery->nursery_name;
 
             foreach($child->nursery->activities as $activity){
-                $event = ['title' => $activity->headline , 'start' => $activity->date, 'color' => "#{$color}", 'content' => $activity->content ];
+                $event = ['title' => $activity->headline , 'start' => $activity->date, 'color' => "#{$color}", 'content' => $activity->content, 'nurseryName' =>$nurseryName ];
                 array_push($events,$event);
             }
         }
 
         //set the color for the kindergarten
         $color = $kindergarten->nursery_color;
+        $nurseryName = $kindergarten->nursery_name;
         foreach($kindergarten->activities as $activity){
-            $event = ['title' => $activity->headline , 'start' => $activity->date, 'color' => "#{$color}", 'content' => $activity->content];
+            $event = ['title' => $activity->headline , 'start' => $activity->date, 'color' => "#{$color}", 'content' => $activity->content, 'nurseryName' =>$nurseryName ];
             array_push($events,$event);
         }
 

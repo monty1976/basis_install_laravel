@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests\ParentRequest;
 use App\User\User;
 use App\User\UserRepositoryInterface;
 use App\Adress\AdressRepositoryInterface;
@@ -43,10 +44,12 @@ class ParentController extends Controller {
         //dd($adress);
         
         $postal_codes = $this->postal_codeRepo->getPostalCodes();
+
+
         //dd($postal_codes);
         
         $phone = $this->phoneRepo->getPhoneNumberByUserId($user->id);
-        //dd($phones);
+       // dd($phone);
 
         if($user->is_public === 0){
             $checkboxClass = [];
@@ -58,7 +61,7 @@ class ParentController extends Controller {
         return view("parent.profile", compact('user', 'adress', 'postal_codes', 'phone', 'checkboxClass'));
     }
     
-    public function editProfile(Request $request)
+    public function editProfile(ParentRequest $request)
     {
         $first_name = Input::get('first_name');
         $last_name = Input::get('last_name');

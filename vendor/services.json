@@ -30,7 +30,8 @@
         "App\\Providers\\RouteServiceProvider",
         "Laracasts\\Generators\\GeneratorsServiceProvider",
         "Laracasts\\Utilities\\JavaScript\\JavascriptServiceProvider",
-        "App\\DependencyResolver"
+        "App\\DependencyResolver",
+        "Intervention\\Image\\ImageServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -51,7 +52,8 @@
         "App\\Providers\\RouteServiceProvider",
         "Laracasts\\Generators\\GeneratorsServiceProvider",
         "Laracasts\\Utilities\\JavaScript\\JavascriptServiceProvider",
-        "App\\DependencyResolver"
+        "App\\DependencyResolver",
+        "Intervention\\Image\\ImageServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

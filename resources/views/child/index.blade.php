@@ -32,11 +32,11 @@
                         <div class="form-group">
                             {!! Form::label('date_from', 'Fra', ['class' => 'col-sm-1', 'control-label']) !!}
                             <div class="col-sm-5">
-                                {!! Form::text('date_from', '', ['id' => 'datepicker']) !!}
+                                {!! Form::text('date_from', '', ['id' => 'datepicker', 'class' => 'bootDatePicker']) !!}
                             </div>
                             {!! Form::label('date_to', 'Til', ['class' => 'col-sm-1', 'control-label']) !!}
                             <div class="col-sm-5">
-                                {!! Form::text('date_to', '', ['id' => 'datepicker']) !!}
+                                {!! Form::text('date_to', '', ['id' => 'datepicker', 'class' => 'bootDatePicker']) !!}
                             </div>
                         </div>
                     </div>
@@ -77,6 +77,9 @@
                         <p>{{$posts->date}}</p>
                         <h4>{{$posts->headline}}</h4>
                         <p>{{$posts->content}}</p>
+                           @foreach($posts->images as $image)
+                              <p><img src="{{$image->image_base_64}}" class="img-responsive img-thumbnail"  alt="" ></p>
+                           @endforeach
                         <hr> 
                     @endforeach
                 </div>
@@ -103,4 +106,8 @@
         @endif
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{ asset('/js/employee.js') }}" type="text/javascript"></script>
 @endsection

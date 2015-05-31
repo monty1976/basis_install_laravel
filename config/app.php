@@ -154,6 +154,9 @@ return [
                 /* My Dependency Resolver */
                 'App\DependencyResolver',
 
+        /*Intervention image*/
+        'Intervention\Image\ImageServiceProvider',
+
 	],
 
 	/*
@@ -202,7 +205,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
         'Form'=> 'Illuminate\Html\FormFacade',
-        'HTML'=> 'Illuminate\Html\HtmlFacade'
+        'HTML'=> 'Illuminate\Html\HtmlFacade',
+        'IntervationImage' => 'Intervention\Image\Facades\Image',
 	],
 
 ];

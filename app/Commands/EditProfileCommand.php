@@ -9,11 +9,21 @@ use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Support\Facades\Hash;
 class EditProfileCommand extends Command implements SelfHandling {
 
-	/**
-	 * Create a new command instance.
-	 *
-	 * @return void
-	 */
+    /**
+     * Create a new command instance.
+     *
+     * @param $first_name
+     * @param $last_name
+     * @param $email
+     * @param $street
+     * @param $number
+     * @param $postal_code
+     * @param $phone
+     * @param $password
+     * @param $new_password
+     * @param $is_public
+     * @return \App\Commands\EditProfileCommand
+     */
 	public function __construct($first_name, $last_name,$email, $street, $number ,$postal_code, $phone, $password, $new_password, $is_public)
 	{
             $this->first_name = $first_name;
@@ -29,11 +39,13 @@ class EditProfileCommand extends Command implements SelfHandling {
             $this->is_public = $is_public;
 	}
 
-	/**
-	 * Execute the command.
-	 *
-	 * @return void
-	 */
+    /**
+     * Execute the command.
+     *
+     * @param AdressRepositoryInterface $adressRepo
+     * @param PhoneRepositoryInterface $phoneRepo
+     * @return void
+     */
 	public function handle(AdressRepositoryInterface $adressRepo, PhoneRepositoryInterface $phoneRepo)
 	{
             $user = Auth::user();

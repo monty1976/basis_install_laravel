@@ -30,8 +30,9 @@ class PostRequest extends Request {
         
         public function messages() {
             return [
-                'headline.required' => 'Please enter a description',
-                'content.required' => 'Please fill out content'
+                'date.required' => 'Angiv en gyldig dato',
+                'headline.required' => 'Udfyld Overskrift',
+                'content.required' => 'Udfyld Beskrivelse'
             ];
         }
 

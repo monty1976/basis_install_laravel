@@ -28,6 +28,7 @@ $(document).ready(function() {
         eventClick: function(calEvent, jsEvent, view){
 
             $("#modalContent").html(calEvent.content);
+            $("#myModalLabel").html(calEvent.nurseryName + " - " + calEvent.title);
             $("#myModal").modal('show');
 
             console.log(calEvent);
@@ -35,5 +36,7 @@ $(document).ready(function() {
             console.log(view);
         }
     });
+
+
 
 });

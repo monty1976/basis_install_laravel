@@ -117,27 +117,27 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function redirectPath()
 	{
-            $role_id = $this->auth->user()->role_id;
-            //dd($this->auth->user()->role_id);
-            
+        $role_id = $this->auth->user()->role_id;
+
 		if (property_exists($this, 'redirectPath'))
 		{
 			return $this->redirectPath;
 		}
-                
-                if($role_id == 1)
-                {
-                    return property_exists($this, 'redirectTo') ? $this->redirectTo : '/employee';
-                }
-                
-                if($role_id == 2)
-                {
-                    return property_exists($this, 'redirectTo') ? $this->redirectTo : '/parent';
-                }
-                
-                
 
-		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+        if($role_id == 1)
+        {
+            return property_exists($this, 'redirectTo') ? $this->redirectTo : '/employee';
+        }
+
+        if($role_id == 2)
+        {
+            return property_exists($this, 'redirectTo') ? $this->redirectTo : '/parent';
+        }
+
+
+
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
 	}
 
 	/**

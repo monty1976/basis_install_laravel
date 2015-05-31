@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('date', 'Dato') !!}
-                {!! Form::text('date', '', ['id' => 'datepicker']) !!}
+                {!! Form::text('date', '', ['id' => 'datepicker',  'class' => 'bootDatePicker']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('content', 'Indhold:') !!}

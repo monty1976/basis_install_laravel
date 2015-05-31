@@ -23,6 +23,7 @@ class SleepController extends Controller {
         $this->childRepo = $childRepo;
         $this->sleepRepo = $sleepRepo;
         $this->userRepo = $userRepo;
+        $this->middleware('auth');
     }
     
     public function showChildrenNames()
@@ -34,7 +35,12 @@ class SleepController extends Controller {
         return view('employee.sleep', compact('children'));
     }
 
-    public function registerSleep() //SleepRequest $request
+    /**
+     * @param SleepRequest $request
+     * @internal param $SleepRequest $
+     * @return mixed
+     */
+    public function registerSleep(SleepRequest $request) //SleepRequest $request
     {
         $sleep = new Sleep();
         

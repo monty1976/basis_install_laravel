@@ -10,5 +10,7 @@ interface ChildRepositoryInterface
     public function getChildUsers($id);
     
     public function getChildrenByNursery($nursery);
+
+    public function createChild($child);
 }
 

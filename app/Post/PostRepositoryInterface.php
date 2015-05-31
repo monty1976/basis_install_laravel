@@ -6,4 +6,6 @@ interface PostRepositoryInterface {
     public function getPostForNurseries($nursery_id);
     
     public function insertPost(Post $post);
+
+    public function imagePost($imagePost);
 }

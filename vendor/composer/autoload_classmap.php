@@ -6,6 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AdressSeeder' => $baseDir . '/database/seeds/AdressSeeder.php',
+    'CmsCreateColumns' => $baseDir . '/database/migrations/2015_05_30_125806_cms_create_columns.php',
+    'CmsCreateContentTypes' => $baseDir . '/database/migrations/2015_05_30_125640_cms_create_content_types.php',
+    'CmsCreateContents' => $baseDir . '/database/migrations/2015_05_30_125705_cms_create_contents.php',
+    'CmsCreatePages' => $baseDir . '/database/migrations/2015_05_30_125720_cms_create_pages.php',
+    'CmsCreateSections' => $baseDir . '/database/migrations/2015_05_30_125745_cms_create_sections.php',
+    'CmsCreateSubpages' => $baseDir . '/database/migrations/2015_05_30_125833_cms_create_subpages.php',
     'CreateActivitiesTable' => $baseDir . '/database/migrations/2015_04_24_105742_create_activities_table.php',
     'CreateActivityImagesTable' => $baseDir . '/database/migrations/2015_04_24_112954_create_activity_images_table.php',
     'CreateAdressesTable' => $baseDir . '/database/migrations/2015_04_24_100708_create_adresses_table.php',
@@ -14,6 +21,7 @@ return array(
     'CreateFoodplansTable' => $baseDir . '/database/migrations/2015_04_24_113405_create_foodplans_table.php',
     'CreateFormTypesTable' => $baseDir . '/database/migrations/2015_04_24_111400_create_form_types_table.php',
     'CreateFormsTable' => $baseDir . '/database/migrations/2015_04_24_111748_create_forms_table.php',
+    'CreateImagePostPivotTable' => $baseDir . '/database/migrations/2015_05_30_125114_create_image_post_pivot_table.php',
     'CreateImagesTable' => $baseDir . '/database/migrations/2015_04_24_084812_create_images_table.php',
     'CreateMemosTable' => $baseDir . '/database/migrations/2015_04_24_114337_create_memos_table.php',
     'CreateNurseriesTable' => $baseDir . '/database/migrations/2015_04_24_103343_create_nurseries_table.php',
@@ -407,6 +415,7 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PostalSeeder' => $baseDir . '/database/seeds/PostalSeeder.php',
+    'ProfileImages' => $baseDir . '/database/migrations/2015_05_28_123236_profile_images.php',
     'RoleSeeder' => $baseDir . '/database/seeds/RoleSeeder.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
@@ -446,4 +455,5 @@ return array(
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/Text/Template.php',
+    'UserSeeder' => $baseDir . '/database/seeds/UserSeeder.php',
 );

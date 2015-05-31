@@ -24,13 +24,20 @@ class FormRequest extends Request {
 		return [
                     'date_from' => 'required',
                     'date_to' => 'required',
-                    'description' => 'required'
+                    'description' => 'required',
+                    'time_start' => 'required',
+                    'time_end' => 'required'
+
 		];
 	}
         
         public function messages(){
             return [
-                'description.required' => 'Please enter a description'
+                'description.required' => 'Udfyld besked',
+                'date_from.required' => 'Vælg en start dato',
+                'date_to.required' => 'Vælg en slut dato',
+                'time_start.required' => 'Angiv en start tid',
+                'time_end.required' => 'Angiv en slut tid'
             ];
         }
 

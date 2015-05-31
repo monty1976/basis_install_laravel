@@ -30,7 +30,9 @@ class ActivityRequest extends Request {
         
         public function messages(){
             return [
-                'headline.required' => 'Remember to enter a headline'
+                'headline.required' => 'Udfyld Overskrift',
+                'date.required' => 'Angiv en gyldig dato',
+                'content.required' => 'Udfyld indhold'
             ];
         }
 

@@ -6,7 +6,7 @@ class Child extends Model {
 
     //A child belongs to an image
     function image(){
-        return $this->belongsTo('App\Image');
+        return $this->belongsTo('App\Image\Image');
     }
 
     function nursery(){
